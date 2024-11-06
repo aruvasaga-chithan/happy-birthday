@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            display: flex;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .left, .right {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-slider {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .slider-image {
+            width: auto;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .right h1 {
+            font-size: 2em;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        .right p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .right button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-message {
+            margin-top: 20px;
+            color: #ff69b4;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Images -->
+        <div class="left">
+            <h2>Memories</h2>
+            <div class="image-slider">
+                <img src="corres1.jpeg" alt="Memory 1" class="slider-image">
+                <img src="corres2.jpeg" alt="Memory 2" class="slider-image">
+                <img src="corres3.jpeg" alt="Memory 3" class="slider-image">
+            </div>
+        </div>
+
+        <!-- Right Side: Short Birthday Wishes -->
+        <div class="right">
+            <h1>Happy Birthday SK Sir!</h1>
+            <p>May your day be filled with joy, health, and the love you bring to our team. Thank you for your unwavering guidance and kindness and once again many more Happy Returns of the day sir 🎉</p>
+            <p>With heartfelt gratitude,</p>
+            <p>The SSEC Family 💖</p>
+            <button onclick="showSurprise()">Click for a Birthday Surprise!</button>
+            <p class="footer-message">🎉 Wishing you boundless happiness and success! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-image');
+    
+        function changeImage() {
+            images.forEach((img, index) => {
+                img.style.opacity = index === currentIndex ? '1' : '0';
+            });
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+    
+        setInterval(changeImage, 3000); // Change image every 3 seconds
+    
+        function showSurprise() {
+            // Redirect to gift.html
+            window.location.href = 'suprice.html';
+        }
+    </script>
+    
+</body>
+</html>
